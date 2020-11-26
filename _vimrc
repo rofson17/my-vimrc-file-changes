@@ -39,30 +39,40 @@ function MyDiff()
   endif
 endfunction
 
+
+
 "Aditional Changes
-set nu
 set autoindent
 set noerrorbells
-set guifont=Courier\ New:h10
+set guifont=Lucida\ Sans\ Typewriter:h10
+colorscheme torte
+set noswapfile
+set nobackup
+set cursorline
 
-inoremap [ []<Esc>i
+
+
+
 inoremap { {}<Esc>i
-
-au GUIEnter * simalt ~x
-set hls
-set is
-set cb=unnamed
-set ts=4
-set sw=4
-set si
-cd E:\Vim
-
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
+set nu
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set rnu
+    autocmd BufLeave,FocusLost,InsertEnter * set nornu
+augroup END
+
 "autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 -O2 -Wall % -o %:r && %:r.exe <CR>
-autocmd filetype cpp nnoremap <F10> :!%:r<CR>
+"autocmd filetype cpp nnoremap <F10> :!%:r<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
-autocmd filetype cpp nnoremap <F12> :sh<CR>
+
+nnoremap <F7> :browse tabnew <CR>
+nnoremap <F8> :browse confirm e<CR>
+nnoremap <F10> :%y+ <CR>
+nnoremap <F11> :colorscheme zellner<CR>
+nnoremap <F12> :sh<CR>
+ 
