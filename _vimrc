@@ -39,40 +39,35 @@ function MyDiff()
   endif
 endfunction
 
-
-
 "Aditional Changes
 set autoindent
 set noerrorbells
-set guifont=Lucida\ Sans\ Typewriter:h10
-colorscheme torte
+"set guifont=Lucida\ Sans\ Typewriter:h10
+set guifont=courier_new:h10:b
+colorscheme peachpuff
 set noswapfile
 set nobackup
 set cursorline
-
-
-
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
 inoremap {{ {
 inoremap {} {}
 
-set nu
+set nu 
 augroup numbertoggle
     autocmd!
     autocmd BufEnter,FocusGained,InsertLeave * set rnu
     autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
 
+nnoremap <F7> :browse tabnew <CR>
+nnoremap <F8> :%y+ <CR>
 "autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 -O2 -Wall % -o %:r && %:r.exe <CR>
-"autocmd filetype cpp nnoremap <F10> :!%:r<CR>
+autocmd filetype cpp nnoremap <F10> :!%:r<CR> 
+nnoremap <F12> :sh<CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
 
-nnoremap <F7> :browse tabnew <CR>
-nnoremap <F8> :browse confirm e<CR>
-nnoremap <F10> :%y+ <CR>
-nnoremap <F11> :colorscheme zellner<CR>
-nnoremap <F12> :sh<CR>
+
  
