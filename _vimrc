@@ -40,17 +40,15 @@ function MyDiff()
 endfunction
 
 "Aditional Changes
+set ts=4
+set sw=4
+set hls
 set autoindent
-set noerrorbells
+set belloff=all
 "set guioptions -=M
 set guioptions -=T
-set hls
 set guifont=courier_new:h10:b
 colorscheme peachpuff
-set noswapfile
-set nobackup
-set cursorline
-
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
