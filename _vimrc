@@ -42,12 +42,15 @@ endfunction
 "Aditional Changes
 set autoindent
 set noerrorbells
-"set guifont=Lucida\ Sans\ Typewriter:h10
-"set guifont=courier_new:h10:b
+"set guioptions -=M
+set guioptions -=T
+set hls
+set guifont=courier_new:h10:b
 colorscheme peachpuff
 set noswapfile
 set nobackup
 set cursorline
+
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
@@ -61,15 +64,8 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
 
-augroup new_cursorline
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set cursorline
-    autocmd BufLeave,FocusLost,InsertEnter * set nocursorline
-augroup END
-
-
 autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 -O2 -Wall % -o %:r && %:r.exe <CR>
 autocmd filetype cpp nnoremap <F10> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype java nnoremap <F9> :w <bar> !javac %  && java % <CR>
+autocmd filetype java nnoremap <F9> :w <bar> !javac %  && java %:r <CR>
 autocmd filetype cpp nnoremap <F11> :!%:r<CR> 
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
