@@ -45,10 +45,13 @@ set sw=4
 set hls
 set autoindent
 set belloff=all
-"set guioptions -=M
-set guioptions -=T
-set guifont=courier_new:h10:b
-colorscheme peachpuff
+set laststatus=2
+set guioptions -=T                           
+set guifont=Lucida\ Console:h10
+colorscheme torte
+set lines=40
+
+
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
@@ -62,8 +65,8 @@ augroup numbertoggle
     autocmd BufLeave,FocusLost,InsertEnter * set nornu
 augroup END
 
-autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 -O2 -Wall % -o %:r && %:r.exe <CR>
-autocmd filetype cpp nnoremap <F10> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
-autocmd filetype java nnoremap <F9> :w <bar> !javac %  && java %:r <CR>
-autocmd filetype cpp nnoremap <F11> :!%:r<CR> 
+autocmd filetype cpp nnoremap <F9> :w <bar> !g++ -std=c++14 % -o %:r -Wl,--stack,268435456<CR>
+autocmd filetype cpp nnoremap <F10> :!%:r<CR> 
+autocmd filetype java nnoremap <F7> :w <bar> !javac % <CR>
+autocmd filetype java nnoremap <F8> :w<bar> !java %:r <CR>
 autocmd filetype cpp nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
