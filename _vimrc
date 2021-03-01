@@ -3,8 +3,9 @@ set sw=4
 set hls
 set autoindent
 set belloff=all
-set laststatus=2
-set guioptions -=T                           
+set guioptions -=T   
+set nobackup
+set noundofile
 set guifont=courier_new:h10:b
 colorscheme peachpuff
 set lines=40
