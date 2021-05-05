@@ -9,6 +9,8 @@ set noundofile
 set guifont=courier_new:h10:b
 colorscheme peachpuff
 set lines=40
+set t_Co=256
+
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
