@@ -3,12 +3,12 @@ set sw=4
 set hls
 set autoindent
 set belloff=all
-set guioptions -=T   
 set nobackup
 set noundofile
+colorscheme solarized8_high
 set guifont=courier_new:h10:b
-colorscheme peachpuff
-set lines=40
+set guioptions -=T
+set clipboard=unnamed
 set t_Co=256
 
 
