@@ -6,11 +6,10 @@ set belloff=all
 set nobackup
 set noundofile
 colorscheme solarized8_high
-set guifont=courier_new:h10:b
-set guioptions -=T
+set guifont=courier_new:h10
+set guioptions-=T
 set clipboard=unnamed
 set t_Co=256
-
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
