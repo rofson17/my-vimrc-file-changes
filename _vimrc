@@ -9,7 +9,10 @@ colorscheme solarized8_high
 set guifont=courier_new:h10
 set guioptions-=T
 set clipboard=unnamed
-set t_Co=256
+
+if has('gui_running')
+  colorscheme OceanicNext
+endif
 
 inoremap { {}<Esc>i
 inoremap {<CR> {<CR>}<Esc>O
