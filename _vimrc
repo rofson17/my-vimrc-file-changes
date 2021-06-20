@@ -5,7 +5,6 @@ set autoindent
 set belloff=all
 set nobackup
 set noundofile
-colorscheme solarized8_high
 set guifont=courier_new:h10
 set guioptions-=T
 set clipboard=unnamed
